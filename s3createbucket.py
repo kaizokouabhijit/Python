@@ -1,6 +1,7 @@
 
 from venv import create
 import boto3
+import unittest
 
 
 
@@ -19,10 +20,39 @@ for bucket in bucket_list['Buckets']:
 def createbucket(name):
     bucket = client.create_bucket(Bucket = name,CreateBucketConfiguration={'LocationConstraint':'us-west-1'})
                 
-    print(bucket['Location'])
+    return bucket['Location']
 
 
 
-createbucket('operative-aws-trainoing-3')
+
+class testcreatebucket(unittest.TestCase):
+    def test_createbucket(self):
+        name = 'operative-aws-trainoing-3'
+
+        Location = 'http://operative-aws-trainoing-3.s3.amazonaws.com/'
+
+        res = createbucket(name)
+        self.assertEqual(res,Location)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if __name__ == '__main__':
+    unittest.main()
+        
+
+
 
 

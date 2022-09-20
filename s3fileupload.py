@@ -7,4 +7,6 @@ response = s3.Bucket(bucket_name).upload_file('Demo.txt', 'Demo.txt')
 
 print(response)
 
-
+name = 'Demo.txt'
+def uploadfile(name):
+    
