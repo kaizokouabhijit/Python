@@ -20,6 +20,15 @@ def createBucket(bucket_name):
 # createBucket(bucket_name)
 
 
+def fileupload():
+    res = boto3.resource('s3')
+    createBucket('operative-aws-trainoing-3')
+
+    response = res.Bucket('operative-aws-trainoing-3').upload_file('Demo.txt', 'Demo.txt')
+    return response
+
+
+
 
 
 
@@ -59,6 +68,18 @@ class MyTest(unittest.TestCase):
         testbucket = "Testbucket"
         response = s3.create_bucket(Bucket = testbucket, CreateBucketConfiguration={'LocationConstraint':'us-west-1'})
         self.assertEqual(response['ResponseMetadata']['HTTPStatusCode'], self.content)
+
+    def test_fileupload(self):
+        fileupload()
+        s3 = boto3.client('s3')
+        name = 'testBucket'
+        res = boto3.resource('s3')
+        s3.create_bucket(Bucket = name,CreateBucketConfiguration={'LocationConstraint':'us-west-1'})
+
+        response = res.Bucket(name).upload_file('Demo.txt', 'Demo.txt')
+
+        self.assertEqual(response, None)
+
         
 
         
