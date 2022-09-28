@@ -1,0 +1,21 @@
+# yaml stands for A'int another markup language
+#superset of json
+
+customerName: Abhijit
+OrderID: 123
+moreData: null
+shipped: false
+
+#List of products
+products:
+    -name: mac
+    -name: iPhone
+    -name: Desktop
+
+#It can also be written as 
+
+Products: [name: Washing machine]
+
+address:
+    street: ViratNagar
+    pinCode: 640068
