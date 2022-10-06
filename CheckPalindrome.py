@@ -1,3 +1,6 @@
+import unittest
+import pytest
+
 
 def check_Palindrome(N):
     temp = N
@@ -6,6 +9,10 @@ def check_Palindrome(N):
         n = N%10
         rev = rev*10+n
         N = N//10
-    return (temp == rev)
+    return rev
 
-print(check_Palindrome(121))
+# print(check_Palindrome(123))
+
+@pytest.mark.parametrize("a, expected", [[54321, 12345], [121,121]])
+def test_palindrome(a, expected):
+    assert check_Palindrome(a) == expected

@@ -1,7 +1,7 @@
 # count number of digits in a number
 
 
-N = 1
+
 
 def count_digit(N):
     count = 0
@@ -10,4 +10,4 @@ def count_digit(N):
         count+=1
     return count+1
 
-print(count_digit(N))
+# print(count_digit(N))

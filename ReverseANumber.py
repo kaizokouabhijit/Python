@@ -2,7 +2,7 @@
 
 
 
-N = 12345
+
 
 
 
@@ -19,4 +19,4 @@ def reverse_number(N):
     return rev
 
 
-print(reverse_number(N))
+# print(reverse_number(N))

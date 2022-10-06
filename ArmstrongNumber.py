@@ -1,5 +1,7 @@
 #  Armstrong number - 153 = 1^3+5^3+3^3
 
+import pytest
+
 
 
 from click import Argument
@@ -23,4 +25,6 @@ def IsArmstrongNumber(N):
     return (temp ==res)
     
 
-print(IsArmstrongNumber(152))     
+
+def test_ISArmstrong():
+    assert IsArmstrongNumber(153) == False
