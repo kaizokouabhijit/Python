@@ -10,7 +10,7 @@ def listBuckets():
         
 # print(listBuckets())
 
-bucket_name = 'operative-aws-trainoing-3'
+# bucket_name = 'operative-aws-trainoing-3'
 def createBucket(bucket_name):
     s3 = boto3.client('s3')
     bucket = s3.create_bucket(Bucket = bucket_name,CreateBucketConfiguration={'LocationConstraint':'us-west-1'})
@@ -52,10 +52,10 @@ class MyTest(unittest.TestCase):
         
 
         
-        listBuckets()
+        response =listBuckets()
 
         
-        s3 = boto3.client('s3')
+       
         
         Bucket_list = s3.list_buckets()   # Bucket_list should be a list, but gives some weird value 
         self.assertEqual(Bucket_list['ResponseMetadata']['HTTPStatusCode'], self.content)

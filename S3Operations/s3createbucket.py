@@ -25,14 +25,14 @@ def createbucket(name):
 
 
 
-class testcreatebucket(unittest.TestCase):
-    def test_createbucket(self):
-        name = 'operative-aws-trainoing-3'
+# class testcreatebucket(unittest.TestCase):
+#     def test_createbucket(self):
+#         name = 'operative-aws-trainoing-3'
 
-        Location = 'http://operative-aws-trainoing-3.s3.amazonaws.com/'
+#         Location = 'http://operative-aws-trainoing-3.s3.amazonaws.com/'
 
-        res = createbucket(name)
-        self.assertEqual(res,Location)
+#         res = createbucket(name)
+#         self.assertEqual(res,Location)
 
 
 
