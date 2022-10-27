@@ -57,7 +57,7 @@ class MyTest(unittest.TestCase):
         
        
         
-        Bucket_list = s3.list_buckets()   # Bucket_list should be a list, but gives some weird value 
+        Bucket_list = self.s3.list_buckets()   # Bucket_list should be a list, but gives some weird value 
         self.assertEqual(Bucket_list['ResponseMetadata']['HTTPStatusCode'], self.content)
     
     def test_createbucket(self):
